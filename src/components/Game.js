@@ -22,6 +22,7 @@ class Game extends Component {
     this.clickHandler = this.clickHandler.bind(this);
     this.playGame = this.playGame.bind(this);
     this.valueEnter = this.valueEnter.bind(this);
+    this.resetGame = this.resetGame.bind(this);
   }
 
   clickHandler(e) {
@@ -33,15 +34,32 @@ class Game extends Component {
     });
   }
 
-  valueEnter(e){
+  resetGame(){
+    this.setState({
+      value: "",
+      rounds: 0,
+      playerWin: 0,
+      compWin: 0,
+      queue: 0,
+      compChoice: "",
+      playerChoice: "",
+      score: "",
+      input: false,
+      playLog: [],
+      display: false,
+      play: false
+    })
+  }
+
+  valueEnter(e) {
     // let value = e.target.value;
-    if(e.key === 'Enter'){
+    if (e.key === "Enter") {
       this.setState({
         value: e.target.value,
         // message: "",
         display: true
-      })
-   }
+      });
+    }
   }
 
   changeHandler(event) {
@@ -50,7 +68,7 @@ class Game extends Component {
     if (!isNaN(value) || value === null) {
       this.setState({
         value: event.target.value,
-        message: "",
+        message: ""
         // display: true
       });
     } else if (this.state.disabled === true && this.state.rounds > 0) {
@@ -170,7 +188,7 @@ class Game extends Component {
           <h2
             className="game-message__rounds"
             style={{
-              display: !this.state.display ? "none" : "block"
+              display: !this.state.display || this.state.play ? "none" : "block"
             }}
           >
             You will play: {this.state.value} rounds!
@@ -186,7 +204,7 @@ class Game extends Component {
         <div
           className="game-buttons__play"
           style={{
-            display: !this.state.play ? "none" : "flex"
+            display: !this.state.play || vinner ? "none" : "flex"
           }}
         >
           <button onClick={e => this.playGame(e.target.id)} id={"paper"}>
@@ -202,7 +220,7 @@ class Game extends Component {
         <div
           className="game-score__results"
           style={{
-            display: !this.state.play ? "none" : "flex"
+            display: !this.state.queue || vinner ? "none" : "flex"
           }}
         >
           <div className="player-wrapper">
@@ -223,7 +241,14 @@ class Game extends Component {
           </div>
         </div>
         <div className="vinner-wrapper">
-          <h2 className="vinner-header">{this.state.score}</h2>
+          <h2
+            className="vinner-header"
+            style={{
+              display: vinner ? "none" : "flex"
+            }}
+          >
+            {this.state.score}
+          </h2>
         </div>
         <h1 className="game-vinner">{vinner}</h1>
         <div
@@ -252,7 +277,10 @@ class Game extends Component {
               ))}
             </tbody>
           </table>
-          {/* // </div> */}
+          <button 
+          className="start-game__button"
+          onClick={this.resetGame}
+          >Play again</button>
         </div>
       </div>
     );
