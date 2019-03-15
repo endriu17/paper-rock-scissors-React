@@ -1,33 +1,203 @@
-.App {
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.game {
+  margin: 0;
+  padding: 0;
+}
+
+.game-header {
+  color: #0505b3;
+  /* border: 1px solid red; */
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.input-wrapper {
+  /* border: 1px solid grey; */
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-input {
+  padding: 20px;
+  border: none;
+  background-color: beige;
+  color: #302f2f;
+  text-align: center;
+  font-size: 24px;
+  margin: 50px auto;
+}
+
+input:focus::-webkit-input-placeholder {
+  color: beige;
+}
+
+.start-game__button {
+  border: none;
+  background-color: #ff0000;
+  color: #fff;
+  font-size: 1.3rem;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.game-message__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid green; */
+}
+
+.game-buttons__play {
+  display: flex;
+  justify-content: space-around;
+  width: 70%;
+  align-items: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin: 0 auto;
+}
+
+#paper,
+#rock,
+#scissors {
+  padding: 20px;
+  border: none;
+  background-color: green;
+  color: #fff;
+  font-size: 1.5rem;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+}
+
+#paper:hover,
+#rock:hover,
+#scissors:hover {
+  border: 2px solid green;
+  background-color: #fff;
+  color: green;
+  font-size: 1.5rem;
+}
+
+.game-score__results {
+  /* border: 1px solid yellow; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.player-wrapper,
+.comp-wrapper {
+  width: 25%;
+  border: 1px solid gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 1.5rem;
+}
+
+.vinner-wrapper {
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.game-log {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.game-vinner {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #ff0000;
+  font-weight: bold;
+  margin: 0 auto;
+}
+
+.comp-choice,
+.player-choice {
+  font-weight: bold;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.wins-wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+.log-line {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 60%;
+}
+
+table.result-table {
+  /* border: 2px solid #000000; */
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+  overflow-x: auto;
+}
+
+table.result-table td,
+table.result-table th {
+  border: 1px solid #000000;
+  padding: 5px;
+}
+
+table.result-table thead {
+  background: #cfcfcf;
+  background: -moz-linear-gradient(top, #dbdbdb 0%, #d3d3d3 66%, #cfcfcf 100%);
+  background: -webkit-linear-gradient(
+    top,
+    #dbdbdb 0%,
+    #d3d3d3 66%,
+    #cfcfcf 100%
+  );
+  background: linear-gradient(to bottom, #dbdbdb 0%, #d3d3d3 66%, #cfcfcf 100%);
+  /* border-bottom: 3px solid #000000; */
+}
+
+table.result-table thead th {
+  font-size: 20px;
+  font-weight: bold;
+  color: #000000;
+  text-align: center;
+}
+
+table.result-table tfoot {
+  font-size: 20px;
+  font-weight: bold;
+  color: #000000;
+  /* border-top: 2px solid #000000; */
+  height: 20px;
+}
+
+table.result-table td:first-of-type,
+table.result-table th:first-of-type {
+  width: 30px;
+  text-align: center;
+}
+
+table.result-table td,
+table.result-table th {
+  width: 100px;
+  text-align: center;
 }
