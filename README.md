@@ -1,4 +1,4 @@
-This project was bootstrapped with [Paper-rock-scissors in react](https://eager-bhabha-5976e1.netlify.com/).
+Project preview: [Paper-rock-scissors in react](https://eager-bhabha-5976e1.netlify.com/).
 
 ## Available Scripts
 
