@@ -1,4 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Paper-rock-scissors in react](https://eager-bhabha-5976e1.netlify.com/).
 
 ## Available Scripts
 

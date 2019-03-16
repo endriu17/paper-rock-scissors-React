@@ -14,14 +14,20 @@ body {
   color: #0505b3;
   text-align: center;
   margin-top: 100px;
+  font-size: 2.5rem;
 }
 
 .input-wrapper {
-  /* border: 1px solid grey; */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.single-play__result {
+  font-size: 6rem;
+  font-weight: bold;
+  transform: scale(1.5);
 }
 
 .game-input {
@@ -39,13 +45,19 @@ input:focus::-webkit-input-placeholder {
 }
 
 .start-game__button {
-  border: none;
+  border: 2px solid #ff0000;
   background-color: #ff0000;
   color: #fff;
-  font-size: 1.3rem;
+  font-size: 2rem;
   padding: 20px;
   cursor: pointer;
   margin-top: 50px;
+}
+
+.start-game__button:hover {
+  border: 2px solid #ff0000;
+  color: #ff0000;
+  background-color: #fff;
 }
 
 .game-message__wrapper {
@@ -53,7 +65,10 @@ input:focus::-webkit-input-placeholder {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* border: 1px solid green; */
+}
+
+.game-message__rounds {
+  font-size: 2.5rem;
 }
 
 .game-buttons__play {
@@ -63,7 +78,7 @@ input:focus::-webkit-input-placeholder {
   align-items: center;
   padding-top: 30px;
   padding-bottom: 30px;
-  margin: 0 auto;
+  margin: 150px auto;
 }
 
 #paper,
@@ -98,23 +113,25 @@ input:focus::-webkit-input-placeholder {
 
 .player-wrapper,
 .comp-wrapper {
-  width: 25%;
   display: flex;
-  flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  font-size: 1.5rem;
+  border: 4px solid #122579;
+  border-radius: 5px;
+  padding: 20px;
+  width: 25%;
+  /* flex-direction: column; */
 }
 
 .player-wrapper {
   position: absolute;
-  top: -50px;
+  top: 10px;
   left: 20px;
 }
 
 .comp-wrapper {
   position: absolute;
-  top: -50px;
+  top: 10px;
   right: 20px;
 }
 
@@ -133,9 +150,9 @@ input:focus::-webkit-input-placeholder {
   margin: 0 auto;
 }
 
-.game-vinner {
+.game-winner {
   text-align: center;
-  font-size: 2rem;
+  font-size: 4rem;
   color: #ff0000;
   font-weight: bold;
   margin: 80px auto;
@@ -152,18 +169,33 @@ input:focus::-webkit-input-placeholder {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 80%;
+  border: 4px solid #122579;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.comp-result, .player-result {
+  font-size: 34px;
+  font-weight: bold;
+  font-family: 'Orbitron', sans-serif;
+  color: cornflowerblue;
+}
+
+.comp-result__score, .player-result__score {
+  font-weight: bold;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 38px;
+  color: cornflowerblue;
 }
 
 .log-line {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 60%;
+  width: 100%;
 }
 
 table.result-table {
-  /* border: 2px solid #000000; */
   width: 100%;
   text-align: left;
   border-collapse: collapse;
@@ -200,7 +232,6 @@ table.result-table tfoot {
   font-size: 20px;
   font-weight: bold;
   color: #000000;
-  /* border-top: 2px solid #000000; */
   height: 20px;
 }
 
@@ -212,6 +243,6 @@ table.result-table th:first-of-type {
 
 table.result-table td,
 table.result-table th {
-  width: 100px;
+  width: 150px;
   text-align: center;
 }
