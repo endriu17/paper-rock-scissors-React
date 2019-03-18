@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import ReactCSSTransitionGroup from "react-addons-css-transition-group";
 import "../App.css";
 
 class Game extends Component {
@@ -62,16 +61,16 @@ class Game extends Component {
 
   valueEnter(e) {
     let value = e.target.value;
-    if (e.key === "Enter" && !isNaN(value)) {
+    if (e.key === "Enter" && !isNaN(value) && value > 0) {
       this.setState({
         value: value,
         message: "",
         display: true
       });
-    } else if (this.state.display === true && this.state.rounds > 0) {
+    } else if (this.state.display === true && value > 0) {
       this.setState({ message: "" });
     } else {
-      this.setState({ message: "Wprowadź liczbę większą od zera!" });
+      this.setState({ message: "Enter a number greater than zero!" });
     }
   }
 
@@ -81,18 +80,17 @@ class Game extends Component {
       this.setState({
         value: value,
         message: ""
-        // display: true
       });
     } else if (this.state.display === true && this.state.rounds > 0) {
       this.setState({ message: "" });
     } else {
-      this.setState({ message: "Wprowadź liczbę większą od zera!" });
+      this.setState({ message: "Enter a number greater than zero!" });
     }
   }
 
   playGame(id) {
     let randomChoice = Math.floor(Math.random() * 3) + 1;
-    this.setState({ message: "Wprowadź liczbę większą od zera!" });
+    this.setState({ message: "Enter a number greater than zero!" });
     let choices = ["", "rock", "paper", "scissors"];
     let comp = choices[randomChoice];
     this.setState({
@@ -121,7 +119,6 @@ class Game extends Component {
     }, 1000);
     setTimeout(() => {
       this.setState({
-        // choose: false,
         chooseComp: "",
         result: score
       });
@@ -183,99 +180,87 @@ class Game extends Component {
 
     return (
       <div>
-        <ReactCSSTransitionGroup
-          transitionName="fade"
-          transitionEnterTimeout={1000}
-          transitionLeaveTimeout={1000}
-          transitionAppear={true}
-          transitionAppearTimeout={1000}
-        >
-          <span
-            style={{
-              display: this.state.choose ? "flex" : "none",
-              fontSize: "4rem",
-              justifyContent: "center",
-              alignItems: "center",
-              color: "#000",
-              height: "100vh"
-            }}
-          >
-            {this.state.chooseButton}
-            {this.state.chooseComp}
-            <span className="single-play__result">{this.state.result}</span>
-          </span>
-        </ReactCSSTransitionGroup>
         <div
-          className="game"
+          className="result-screen fade-in"
           style={{
-            display: !this.state.choose ? "block" : "none"
+            display: this.state.choose ? "flex" : "none",
+            fontSize: "3rem",
+            fontWeight: "bold",
+            justifyContent: "center",
+            alignItems: "center",
+            // color: "#000",
+            height: "100vh"
           }}
         >
-          <ReactCSSTransitionGroup
-            transitionName="fade"
-            transitionEnterTimeout={1000}
-            transitionLeaveTimeout={1000}
-            transitionAppear={true}
-            transitionAppearTimeout={1000}
+          {this.state.chooseButton}
+          {this.state.chooseComp}
+          <span className="single-play__result">{this.state.result}</span>
+        </div>
+        <div
+          className="game fade-in"
+          style={{
+            display: !this.state.choose ? "flex" : "none"
+          }}
+        >
+          <h1
+            className="game-header"
+            style={{
+              display: !this.state.display ? "block" : "none"
+            }}
           >
-            <h1
-              className="game-header"
+            Paper, rock, scissors...
+          </h1>
+          <div className="input-wrapper">
+            <input
+              type="text"
+              placeholder="Enter a round number"
+              value={this.state.value}
+              onChange={this.changeHandler}
+              onKeyPress={this.valueEnter}
+              disabled={this.state.input}
+              className="game-input"
               style={{
                 display: !this.state.display ? "block" : "none"
               }}
-            >
-              Paper, rock, scissors...
-            </h1>
-            <div className="input-wrapper">
-              <input
-                type="text"
-                placeholder="Enter a round number"
-                value={this.state.value}
-                onChange={this.changeHandler}
-                onKeyPress={this.valueEnter}
-                disabled={this.state.input}
-                className="game-input"
-                style={{
-                  display: !this.state.display ? "block" : "none"
-                }}
-              />
-              <button
-                className="start-game__button"
-                style={{
-                  display:
-                    !this.state.display || this.state.play ? "none" : "block"
-                }}
-                onClick={this.clickHandler}
-              >
-                Start game
-              </button>
-            </div>
-            <div className="game-message__wrapper">
-              <h2 className="game-message__error">{this.state.message}</h2>
-              <h1
-                style={{
-                  display:
-                    !this.state.display || this.state.play ? "none" : "block"
-                }}
-              >
-                Click on start button to play!!
-              </h1>
-              <h2
-                className="game-message__rounds"
-                style={{
-                  display:
-                    !this.state.display || this.state.play ? "none" : "block"
-                }}
-              >
-                You will play: {this.state.value} rounds!
-              </h2>
-            </div>
-            <div
-              className="game-buttons__play"
+            />
+            <button
+              className="start-game__button fade-in backGr"
               style={{
-                display: !this.state.play || winner ? "none" : "flex"
+                display:
+                  !this.state.display || this.state.play ? "none" : "block"
+              }}
+              onClick={this.clickHandler}
+            >
+              Start game
+            </button>
+          </div>
+          <div className="game-message__wrapper fade-in">
+            <h2 className="game-message__error">{this.state.message}</h2>
+            <h1
+              style={{
+                display:
+                  !this.state.display || this.state.play ? "none" : "block"
               }}
             >
+              Click on Start game button to play!
+            </h1>
+            <h2
+              className="game-message__rounds"
+              style={{
+                display:
+                  !this.state.display || this.state.play ? "none" : "block"
+              }}
+            >
+              You will play: {this.state.value} rounds!
+            </h2>
+          </div>
+          <div
+            className="buttons-wrapper fade-in"
+            style={{
+              display: !this.state.play || winner ? "none" : "flex"
+            }}
+          >
+            <div className="game-buttons__play">
               <button onClick={e => this.playGame(e.target.id)} id={"paper"}>
                 Paper
               </button>
@@ -286,69 +271,54 @@ class Game extends Component {
                 Scissors
               </button>
             </div>
-            <div
-              className="game-score__results"
-              style={{
-                display: !this.state.queue || winner ? "none" : "flex"
-              }}
-            >
-              {/* <div className="player-wrapper"> */}
-              {/* <p className="player-choice__label">You choose:</p>
-                <p className="player-choice">{this.state.playerChoice}</p> */}
-              <div className="player-wrapper">
-                <p className="player-result">You:</p>
-                <p className="player-result__score">{this.state.playerWin}</p>
-              </div>
-              {/* </div> */}
-              {/* <div className="comp-wrapper"> */}
-              {/* <p className="comp-choice__label">Computer choose:</p>
-                <p className="comp-choice">{this.state.compChoice}</p> */}
-              <div className="comp-wrapper">
-                <p className="comp-result">Computer:</p>
-                <p className="comp-result__score">{this.state.compWin}</p>
-              </div>
-              {/* </div> */}
+            <h1>Make a choose!</h1>
+          </div>
+          <div
+            className="game-score__results"
+            style={{
+              display: !this.state.queue || winner ? "none" : "flex"
+            }}
+          >
+            <div className="player-wrapper">
+              <p className="player-result">You:</p>
+              <p className="player-result__score">{this.state.playerWin}</p>
             </div>
-            <h1 className="game-winner">{winner}</h1>
-            <div
-              className="game-log"
-              style={{
-                display: !winner ? "none" : "flex"
-              }}
-            >
-              <ReactCSSTransitionGroup
-                transitionName="fade"
-                transitionEnterTimeout={1000}
-                transitionLeaveTimeout={1000}
-                transitionAppear={true}
-                transitionAppearTimeout={1000}
-              >
-                <table className="result-table">
-                  <thead>
-                    <tr>
-                      <th>#</th>
-                      <th>Player</th>
-                      <th>Computer</th>
-                      <th>Result</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {this.state.playLog.map((item, i) => (
-                      <tr key={i}>
-                        <td>{i + 1}</td>
-                        <td>{item.You}</td>
-                        <td>{item.Computer}</td>
-                        <td>{item.Result}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </ReactCSSTransitionGroup>
-              <button className="start-game__button" onClick={this.resetGame}>
-                Play again
-              </button>
+            <div className="comp-wrapper">
+              <p className="comp-result">Computer:</p>
+              <p className="comp-result__score">{this.state.compWin}</p>
             </div>
-          </ReactCSSTransitionGroup>
+          </div>
+          <h1 className="game-winner">{winner}</h1>
+          <div
+            className="game-log"
+            style={{
+              display: !winner ? "none" : "flex"
+            }}
+          >
+            <table className="result-table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Player</th>
+                  <th>Computer</th>
+                  <th>Result</th>
+                </tr>
+              </thead>
+              <tbody>
+                {this.state.playLog.map((item, i) => (
+                  <tr key={i}>
+                    <td>{i + 1}</td>
+                    <td>{item.You}</td>
+                    <td>{item.Computer}</td>
+                    <td>{item.Result}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            <button className="start-game__button backGr" onClick={this.resetGame}>
+              Play again
+            </button>
+          </div>
         </div>
       </div>
     );
