@@ -3,6 +3,7 @@ body {
   margin: 0;
   padding: 0;
   position: relative;
+  background-color: #e7efff;
 }
 
 .game {
@@ -18,7 +19,7 @@ body {
   color: #0505b3;
   text-align: center;
   margin-top: 50px;
-  font-size: 2.5rem;
+  font-size: 3.5rem;
 }
 
 .input-wrapper {
@@ -47,17 +48,27 @@ body {
 }
 
 .game-input {
-  padding: 20px;
-  border: none;
-  background-color: beige;
+  padding: 10px;
+  border: 1px solid #143eb1;
+  border-radius: 5px;
   color: #302f2f;
   text-align: center;
-  font-size: 24px;
-  margin: 50px auto;
+  font-size: 3rem;
+  font-weight: bold;
+  /* margin: 50px auto; */
+  outline: none;
+}
+
+input::placeholder {
+  font-weight: 100;
+  font-size: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 input:focus::-webkit-input-placeholder {
-  color: #f5f5dc;
+  color: #fff;
 }
 
 .start-game__button {
