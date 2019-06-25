@@ -104,6 +104,10 @@ input:focus::-webkit-input-placeholder {
   width: 100%;
 }
 
+.choose-info {
+  color: #003699;
+}
+
 .game-buttons__play {
   display: flex;
   justify-content: space-around;
@@ -257,6 +261,7 @@ input:focus::-webkit-input-placeholder {
 #scissors {
   padding: 10px;
   border-radius: 10px;
+  color: #333333;
 }
 
 #paper:hover,
