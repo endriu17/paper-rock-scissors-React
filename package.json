@@ -2,17 +2,23 @@
   "name": "rps-play",
   "version": "0.1.0",
   "private": true,
+  "main": "app.js",
+  "homepage": ".",
   "dependencies": {
+    "mongoose": "^5.5.5",
     "react": "^16.8.4",
     "react-addons-css-transition-group": "^15.6.2",
     "react-dom": "^16.8.4",
-    "react-scripts": "2.1.8"
+    "react-scripts": "^3.0.0",
+    "serve": "^11.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "server": "node-env-run app --exec nodemon | pino-colada",
+    "dev": "run-p server start"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -22,5 +28,14 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.16.3",
+    "express-pino-logger": "^4.0.0",
+    "node-env-run": "^3.0.2",
+    "nodemon": "^1.18.10",
+    "npm-run-all": "^4.1.5",
+    "pino-colada": "^1.4.4"
+  }
 }

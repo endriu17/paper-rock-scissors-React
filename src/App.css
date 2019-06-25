@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
 body {
   box-sizing: border-box;
   margin: 0;
@@ -253,30 +255,29 @@ input:focus::-webkit-input-placeholder {
 #paper,
 #rock,
 #scissors {
-  padding: 20px;
-  border: none;
-  background-color: #143eb1;
-  color: #fff;
-  font-size: 2rem;
-  height: 200px;
-  width: 200px;
-  border-radius: 50%;
-  outline: none;
-  cursor: pointer;
+  padding: 10px;
+  border-radius: 10px;
 }
 
 #paper:hover,
 #rock:hover,
 #scissors:hover {
-  background-color: #fff;
-  color: #143eb1;
-  font-size: 2.5rem;
-  font-weight: bold;
-  animation: fadeIn ease-in-out 0.4s;
-  -webkit-animation: fadeIn ease-in-out 0.4s;
-  -moz-animation: fadeIn ease-in-out 0.4s;
-  -o-animation: fadeIn ease-in-out 0.4s;
-  -ms-animation: fadeIn ease-in-out 0.4s;
+  color: #003699;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  cursor: pointer;
+}
+
+#paper:active,
+#rock:active,
+#scissors:active {
+  transform: translate(3px, 1px);
+}
+
+.btn-active--comp {
+  color: red;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  cursor: pointer;
+  transform: translate(3px, 1px);
 }
 
 .game-score__results {
@@ -340,7 +341,7 @@ input:focus::-webkit-input-placeholder {
 .player-result {
   font-size: 3rem;
   font-weight: bold;
-  font-family: "Orbitron", sans-serif;
+  font-family: 'Orbitron', sans-serif;
   color: #143eb1;
   margin-right: 15px;
 }
@@ -348,7 +349,7 @@ input:focus::-webkit-input-placeholder {
 .comp-result__score,
 .player-result__score {
   font-weight: bold;
-  font-family: "Orbitron", sans-serif;
+  font-family: 'Orbitron', sans-serif;
   font-size: 3rem;
   color: #6495ed;
 }
