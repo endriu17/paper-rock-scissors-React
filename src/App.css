@@ -20,7 +20,7 @@ body {
 }
 
 .game-header {
-  color: #0505b3;
+  color: #030388;
   text-align: center;
   margin-top: 50px;
   font-size: 3.5rem;
@@ -88,7 +88,7 @@ input:focus::-webkit-input-placeholder {
 
 .start-game__button:hover {
   border: 2px solid #143eb1;
-  color: #143eb1;
+  color: #030388;
   background-color: #fff;
 }
 
@@ -107,14 +107,14 @@ input:focus::-webkit-input-placeholder {
 }
 
 .choose-info {
-  color: #003699;
+  color: #030388;
   font-size: 3rem;
 }
 
 .game-buttons__play {
   display: flex;
   justify-content: space-around;
-  width: 100%;
+  width: 70%;
   align-items: center;
   padding-bottom: 30px;
 }
@@ -262,11 +262,11 @@ input:focus::-webkit-input-placeholder {
 .icon-btn {
   padding: 20px;
   border-radius: 10px;
-  color: #003699;
+  color: #333333;
 }
 
 .icon-btn:hover {
-  color: #333333;
+  color:#030388;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   cursor: pointer;
 }

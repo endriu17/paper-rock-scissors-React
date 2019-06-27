@@ -16,16 +16,16 @@
 
 @keyframes jump {
   0% {
-    opacity: 0.6;
+    /* opacity: 0.6; */
   }
   50% {
-    opacity: 1;
+    /* opacity: 1; */
     /* background-color: #003699; */
-    border: 2px solid #003699;
+    border: 2px solid #030388;
     border-radius: 10px;
-    color: #003699;
+    color: #030388;
   }
   100% {
-    opacity: 0.6;
+    /* opacity: 0.7; */
   }
 }
