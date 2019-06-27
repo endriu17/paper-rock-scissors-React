@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
+import './StartSide.css'
 
 const StartInput = props => {
   return (
@@ -6,11 +7,11 @@ const StartInput = props => {
       <div
         className="game-buttons__play fade-in"
         style={{
-          display: !props.display || props.play ? 'none' : 'flex',
+          display: !props.display ? 'flex' : 'none'
         }}>
-        <i className="icon-btn--result fas fa-hand-paper fa-10x" />
-        <i className="icon-btn--result fas fa-hand-rock fa-10x" />
-        <i className="icon-btn--result fas fa-hand-scissors fa-10x" />
+        <i className="icon-btn--result fas fa-hand-paper fa-10x loader-icon" />
+        <i className="icon-btn--result fas fa-hand-rock fa-10x loader-icon" />
+        <i className="icon-btn--result fas fa-hand-scissors fa-10x loader-icon" />
       </div>
       <input
         type="text"
@@ -26,7 +27,7 @@ const StartInput = props => {
       />
 
       <button
-        className="start-game__button fade-in backGr"
+        className="start-game__button fade-in"
         style={{
           display: !props.display || props.play ? 'none' : 'block'
         }}

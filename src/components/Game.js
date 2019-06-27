@@ -5,7 +5,6 @@ import GameLog from './GameLog';
 import Buttons from './Buttons';
 import Message from './Message';
 import StartInput from './StartInput';
-import RoundResult from './RoundResult';
 import PlayerWinner from './PlayerWinner';
 
 class Game extends Component {
@@ -119,14 +118,14 @@ class Game extends Component {
       }
     }
     const score = scored();
-      this.setState({
-        chooseButton: '',
-        chooseComp: 'Computer: ' + comp,
-        chooseComp: '',
-        result: score
-      });
+    this.setState({
+      chooseButton: '',
+      chooseComp: 'Computer: ' + comp,
+      result: score
+    });
     setTimeout(() => {
       this.setState({
+        chooseComp: '',
         choose: false,
         result: ''
       });

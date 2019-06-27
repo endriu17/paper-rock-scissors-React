@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 const GameLog = props => {
   return (
@@ -27,7 +27,7 @@ const GameLog = props => {
           ))}
         </tbody>
       </table>
-      <button className="start-game__button backGr" onClick={props.resetGame}>
+      <button className="start-game__button" onClick={props.resetGame}>
         Play again
       </button>
     </div>

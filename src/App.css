@@ -2,6 +2,8 @@
 
 body {
   box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
   margin: 0;
   padding: 0;
   position: relative;
@@ -58,7 +60,6 @@ body {
   text-align: center;
   font-size: 3rem;
   font-weight: bold;
-  /* margin: 50px auto; */
   outline: none;
 }
 
@@ -107,12 +108,13 @@ input:focus::-webkit-input-placeholder {
 
 .choose-info {
   color: #003699;
+  font-size: 3rem;
 }
 
 .game-buttons__play {
   display: flex;
   justify-content: space-around;
-  width: 70%;
+  width: 100%;
   align-items: center;
   padding-bottom: 30px;
 }
@@ -260,11 +262,11 @@ input:focus::-webkit-input-placeholder {
 .icon-btn {
   padding: 20px;
   border-radius: 10px;
-  color: #333333;
+  color: #003699;
 }
 
 .icon-btn:hover {
-  color: #003699;
+  color: #333333;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   cursor: pointer;
 }
@@ -319,8 +321,8 @@ input:focus::-webkit-input-placeholder {
 
 .game-winner {
   text-align: center;
-  font-size: 2em;
-  color: #ff0000;
+  font-size: 3em;
+  color: rgb(4, 114, 4);
   font-weight: bold;
 }
 
