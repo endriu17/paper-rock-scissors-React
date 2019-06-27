@@ -11,20 +11,20 @@ const Buttons = props => {
         <i
           onClick={e => props.playGame(e.target.id)}
           id={'paper'}
-          className="fas fa-hand-paper fa-10x"
+          className="icon-btn fas fa-hand-paper fa-10x"
         />
         <i
           onClick={e => props.playGame(e.target.id)}
           id={'rock'}
-          className="fas fa-hand-rock fa-10x"
+          className="icon-btn fas fa-hand-rock fa-10x"
         />
         <i
           onClick={e => props.playGame(e.target.id)}
           id={'scissors'}
-          className="fas fa-hand-scissors fa-10x"
+          className="icon-btn fas fa-hand-scissors fa-10x"
         />
       </div>
-      <h1 className="choose-info">Make a choose!</h1>
+      <h1 className="choose-info">Make Your Selection!</h1>
     </div>
   );
 };

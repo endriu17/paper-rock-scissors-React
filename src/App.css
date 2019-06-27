@@ -29,6 +29,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 80%;
 }
 
 .result-screen {
@@ -256,17 +257,13 @@ input:focus::-webkit-input-placeholder {
   }
 }
 
-#paper,
-#rock,
-#scissors {
-  padding: 10px;
+.icon-btn {
+  padding: 20px;
   border-radius: 10px;
   color: #333333;
 }
 
-#paper:hover,
-#rock:hover,
-#scissors:hover {
+.icon-btn:hover {
   color: #003699;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   cursor: pointer;
@@ -289,25 +286,26 @@ input:focus::-webkit-input-placeholder {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  position: fixed;
+  top: 0;
 }
 
 .player-wrapper,
 .comp-wrapper {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  width: 50%
 }
 
 .player-wrapper {
-  position: absolute;
-  top: 10px;
-  left: 20px;
+  background-color: grey;
 }
 
 .comp-wrapper {
-  position: absolute;
-  top: 10px;
-  right: 20px;
+  background-color: #333333;
+  color: #fff;
 }
 
 .game-log {
@@ -347,8 +345,8 @@ input:focus::-webkit-input-placeholder {
   font-size: 3rem;
   font-weight: bold;
   font-family: 'Orbitron', sans-serif;
-  color: #143eb1;
-  margin-right: 15px;
+  color: #fff;
+  margin-right: 25px;
 }
 
 .comp-result__score,
@@ -356,7 +354,7 @@ input:focus::-webkit-input-placeholder {
   font-weight: bold;
   font-family: 'Orbitron', sans-serif;
   font-size: 3rem;
-  color: #6495ed;
+  color: #fff;
 }
 
 .log-line {
@@ -416,3 +414,4 @@ table.result-table th {
   width: 150px;
   text-align: center;
 }
+

@@ -6,6 +6,7 @@ import Buttons from './Buttons';
 import Message from './Message';
 import StartInput from './StartInput';
 import RoundResult from './RoundResult';
+import PlayerWinner from './PlayerWinner';
 
 class Game extends Component {
   constructor(props) {
@@ -112,24 +113,18 @@ class Game extends Component {
         (comp === 'paper' && id === 'scissors') ||
         (comp === 'scissors' && id === 'rock')
       ) {
-        return 'You WON!';
+        return 'You';
       } else {
-        return 'Computer WON!';
+        return 'Computer';
       }
     }
     const score = scored();
-    setTimeout(() => {
       this.setState({
         chooseButton: '',
-        chooseComp: 'Computer: ' + comp
-      });
-    }, 1000);
-    setTimeout(() => {
-      this.setState({
+        chooseComp: 'Computer: ' + comp,
         chooseComp: '',
         result: score
       });
-    }, 2000);
     setTimeout(() => {
       this.setState({
         choose: false,
@@ -137,9 +132,9 @@ class Game extends Component {
       });
     }, 3000);
     function winner() {
-      if (score === 'You WON!') {
+      if (score === 'You') {
         return 1;
-      } else if (score === 'Computer WON!') {
+      } else if (score === 'Computer') {
         return 2;
       } else {
         return 0;
@@ -160,7 +155,7 @@ class Game extends Component {
         message: '',
         compChoice: comp,
         playerChoice: id,
-        score: score,
+        score: score + ' WON!',
         rounds: this.state.rounds - 1,
         queue: this.state.queue + 1,
         playerWin:
@@ -184,14 +179,15 @@ class Game extends Component {
       }
     }
     const winner = gameWiner();
-
+    console.log(this.state);
     return (
       <div>
-        <RoundResult
+        <PlayerWinner
           choose={this.state.choose}
-          chooseButton={this.state.chooseButton}
-          chooseComp={this.state.chooseComp}
+          score={this.state.score}
           result={this.state.result}
+          player={this.state.playerChoice}
+          comp={this.state.compChoice}
         />
         <div
           className="game fade-in"

@@ -1,0 +1,142 @@
+.modals-container {
+  overflow: auto;
+  height: 100%;
+  width: 100%;
+  animation: fadeIn 3s;
+}
+
+.player {
+  background: rgba(94, 174, 240, 0.5);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 5;
+  height: 100%;
+  width: 50%;
+  left: 0;
+  top: 0;
+  position: fixed;
+}
+
+.comp {
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 5;
+  height: 100%;
+  width: 50%;
+  right: 0;
+  top: 0;
+  position: fixed;
+}
+
+@keyframes center {
+  0% {
+    width: 50%;
+    transform: scale(1);
+  }
+  25% {
+    width: 50%;
+    transform: scale(1);
+  }
+  50% {
+    width: 50%;
+    transform: scale(1);
+  }
+  100% {
+    width: 100%;
+    background: rgba(106, 240, 94, 0.5);
+    transform: scale(1.4);
+  }
+}
+
+#modal-result {
+  z-index: 5;
+  width: 260px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.modal-content--result {
+  background: #fff;
+  text-align: center;
+  margin: 2rem auto;
+  width: 350px;
+  border-radius: 10px;
+  padding: 1.5rem 3rem;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+  animation: delayModal 2s;
+}
+
+@keyframes delayModal {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.modal {
+  display: flex;
+}
+.modal-content {
+  background: #fff;
+  text-align: center;
+  margin: 5% auto;
+  width: 350px;
+  border-radius: 10px;
+  padding: 3rem;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+}
+
+.modal-content h1 {
+  margin-bottom: 1rem;
+}
+
+.modal-content p {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+}
+
+@keyframes modalhide {
+  0% {
+    width: 50%;
+  }
+  25% {
+    width: 50%;
+  }
+  50% {
+    opacity: 0.8;
+    width: 50%;
+  }
+  100% {
+    width: 0;
+    opacity: 0;
+    display: none;
+  }
+}
+
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.icon-btn--result {
+  padding: 10px;
+  border-radius: 10px;
+  color: #333333;
+}
