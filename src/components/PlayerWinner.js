@@ -60,7 +60,8 @@ class PlayerWinner extends Component {
                 className={`icon-btn--result fas fa-hand-${this.props.player} fa-10x`}
               />
               <p>
-                Your Chose <strong>{this.props.player}</strong>
+                Your chose {'  '}
+                <strong className='choice-modal'>{this.props.player}</strong>
               </p>
             </div>
           </div>
@@ -74,7 +75,8 @@ class PlayerWinner extends Component {
             <div id="result-player" className="modal-content">
               <i className={`icon-btn--result fas fa-hand-${this.props.comp} fa-10x`} />
               <p>
-                Computer Chose <strong>{this.props.comp}</strong>
+                Computer chose {'  '}
+                <strong className='choice-modal'>{this.props.comp}</strong>
               </p>
             </div>
           </div>
@@ -85,12 +87,12 @@ class PlayerWinner extends Component {
             dispaly: this.state.result === this.setResult ? 'flex' : 'none'
           }}>
           <div className="modal-content--result">
-            <h1>
-              Result:{' '}
-              <strong>
+            <h4>
+              Result: {' '}
+              <strong className='choice-modal'>
                 {this.props.result === 'Tie' ? 'Tie' : this.props.score}
               </strong>
-            </h1>
+            </h4>
           </div>
         </div>
       </div>

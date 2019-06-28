@@ -63,9 +63,10 @@
   background: #fff;
   text-align: center;
   margin: 2rem auto;
-  width: 350px;
+  font-size: 1.5rem;
+  max-width: 450px;
   border-radius: 10px;
-  padding: 1.5rem 3rem;
+  padding: 1.5rem;
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
   animation: delayModal 2s;
 }

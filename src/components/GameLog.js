@@ -13,7 +13,7 @@ const GameLog = props => {
             <th>#</th>
             <th>Player</th>
             <th>Computer</th>
-            <th>Result</th>
+            <th>Winner</th>
           </tr>
         </thead>
         <tbody>

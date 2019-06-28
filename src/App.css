@@ -426,3 +426,9 @@ table.result-table th {
   border-radius: 10px;
   background-color: #fff;
 }
+
+.choice-modal {
+  color: #030388;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+}
