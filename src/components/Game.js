@@ -221,6 +221,7 @@ class Game extends Component {
             playGame={this.playGame}
           />
           <ResultBar
+            play={this.state.play}
             playerWin={this.state.playerWin}
             compWin={this.state.compWin}
             queue={this.state.queue}

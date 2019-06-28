@@ -417,3 +417,12 @@ table.result-table th {
   text-align: center;
 }
 
+.rounds-number--info {
+  color: red;
+  font-size: 3rem;
+  margin: 0 10px;
+  padding: 5px 15px;
+  border: 2px solid #333;
+  border-radius: 10px;
+  background-color: #fff;
+}

@@ -5,7 +5,7 @@ const ResultTable = props => {
     <div
       className="game-score__results"
       style={{
-        display: !props.queue || props.winner ? 'none' : 'flex'
+        display: !props.play || props.winner ? 'none' : 'flex'
       }}>
       <div className="player-wrapper">
         <p className="player-result">You:</p>

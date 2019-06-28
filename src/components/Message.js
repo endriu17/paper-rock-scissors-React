@@ -15,7 +15,7 @@ const Message = props => {
         style={{
           display: !props.display || props.play ? 'none' : 'block'
         }}>
-        You will play: {props.value} rounds!
+        You will play: <span className='rounds-number--info'>{props.value}</span> rounds!
       </h2>
     </div>
   );

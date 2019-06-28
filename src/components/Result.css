@@ -110,18 +110,20 @@
 @keyframes modalhide {
   0% {
     width: 50%;
+    background: rgba(253, 0, 0, 0.5);
   }
   25% {
     width: 50%;
+    background: rgba(253, 0, 0, 0.5);
   }
   50% {
+    background: rgba(253, 0, 0, 0.5);
     opacity: 0.8;
     width: 50%;
   }
   100% {
     width: 0;
     opacity: 0;
-    display: none;
   }
 }
 
